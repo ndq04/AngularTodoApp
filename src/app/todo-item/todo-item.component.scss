@@ -1,0 +1,95 @@
+.todo-item {
+  display: flex;
+  position: relative;
+  align-items: center;
+  font-size: 17px;
+  margin-bottom: 10px;
+  padding: 20px 0;
+  // background: red;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  &:hover {
+    .check-box {
+      background-color: #cdcfcf;
+      opacity: 0.5;
+      i.material-icons {
+        opacity: 1;
+      }
+    }
+    .todo-controls-box {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.3s;
+      transform: translateY(0);
+    }
+  }
+  &.completed {
+    &:hover {
+      .check-box {
+        opacity: 1;
+      }
+    }
+    .check-box {
+      background-color: #4af09d;
+      border-color: #dee3e3;
+      i.material-icons {
+        opacity: 1;
+      }
+    }
+  }
+  .check-box {
+    display: flex;
+    flex-shrink: 0;
+    border: 2px solid #eee;
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+    margin-right: 15px;
+
+    transition: background-color 0.3s border-color 0.3s;
+    i.material-icons {
+      font-size: 20px;
+      margin: auto;
+      color: white;
+
+      // hide by default
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+  .todo-controls-box {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    display: flex;
+    border-radius: 6px 6px 0 0;
+    overflow: hidden;
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+
+    //hidden by default
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    .todo-control-button {
+      display: flex;
+      background: #f5f7f8;
+      padding: 6px 12px;
+      i.material-icons {
+        font-size: 20px;
+      }
+      &:hover {
+        background: #eee;
+      }
+      &:active {
+        background: #cdcfcf;
+      }
+      &.is-danger:active {
+        i.material-icons {
+          color: rgb(227, 21, 21);
+        }
+      }
+    }
+  }
+}
