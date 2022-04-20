@@ -9,7 +9,6 @@ export class DataService {
     new Todo('Get to work'),
     new Todo('Pick up groceries'),
     new Todo('Go home'),
-    new Todo('Fall asleep'),
   ];
 
   constructor() {}

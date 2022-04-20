@@ -1,5 +1,5 @@
-$heading-height: 10vmax;
-$sec-todo-form-height: 10vmax;
+$heading-height: 150px;
+$sec-todo-form-height: 200px;
 
 .heading-section {
   background: linear-gradient(to right, #02e455, #4af0d7);
@@ -19,19 +19,18 @@ $sec-todo-form-height: 10vmax;
   }
   &--todos-list {
     height: calc(100vh - ($heading-height + $sec-todo-form-height));
-    padding: 0;
-    margin-top: 80px;
+    display: flex;
   }
   .container {
     max-width: 730px;
     height: 100%;
     &--todo-form {
-      transform: translateY(-1vmax);
+      transform: translateY(-20px);
       z-index: 2;
     }
     &--todos-list {
-      // padding: 20px 0;
       overflow-y: auto;
+      margin: 0 auto;
     }
     .add-todo-box {
       padding: 25px;

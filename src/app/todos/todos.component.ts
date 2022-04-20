@@ -32,7 +32,6 @@ export class TodosComponent implements OnInit {
     todo.completed = !todo.completed;
   }
   editTodo(todo: Todo) {
-    // this.dataService.updateTodo()
     const index = this.todos.indexOf(todo);
 
     let dialogRef = this.dialog.open(EditTodoDialogComponent, {
@@ -41,7 +40,6 @@ export class TodosComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        // console.log(result);
         this.dataService.updateTodo(index, result);
       }
     });

@@ -20,11 +20,15 @@ export class EditTodoDialogComponent implements OnInit {
     this.diglogRef.close();
   }
   onFormSubmit(form: NgForm) {
-    if (form.invalid) return;
+    if (form.invalid || !form.value.text.trim()) return;
+    // console.log(form.value);
+    // console.log(this.todo);
+
     const updatedTodo = {
-      ...this.todo,
       ...form.value,
     };
+    // console.log(updatedTodo);
+
     this.diglogRef.close(updatedTodo);
   }
 }
